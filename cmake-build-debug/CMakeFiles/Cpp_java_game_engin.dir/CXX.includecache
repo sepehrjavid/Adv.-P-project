@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/classes.h
+iostream
+-
+vector
+-
+
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/main.cpp
+iostream
+-
+classes.h
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/classes.h
+
