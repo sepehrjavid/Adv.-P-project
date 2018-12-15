@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Dice.cpp">
+			<Option target="Cpp_java_game_engin"/>
+		</Unit>
+		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Game.cpp">
+			<Option target="Cpp_java_game_engin"/>
+		</Unit>
 		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/main.cpp">
 			<Option target="Cpp_java_game_engin"/>
 		</Unit>

@@ -22,28 +22,18 @@ enum COLOR{
 };
 
 class Player;
-class Dice;
-class Board;
 class Mohre;
 
-class Game{
-    std::vector<Player> players;
-    bool has_dice;
-    Dice* dice;
-    Board board;
-public:
-    Player& get_turn();
-};
 
 
-class Player{
-    COLOR color;
-    std::vector<Mohre> mohre;
-};
 
-template <int m>
 class Dice{
-
+    int* arr;
+    int num;
+public:
+    Dice(int m);
+    void roll();
+    ~Dice();
 };
 
 
@@ -55,6 +45,33 @@ public:
 };
 
 
+
+
+class Game{
+    std::vector<Player> players;
+    bool has_dice;
+    Dice dice;
+    Board board;
+public:
+    Game(int blen, int bwid, bool has_dice, int dice_number = 0);
+    Player& get_turn();
+    void add_player();
+};
+
+
+class Player{
+    COLOR color;
+    std::vector<Mohre> mohre;
+    std::string name;
+    int score;
+};
+
+
 class Mohre{
+
+};
+
+
+class Time{
 
 };

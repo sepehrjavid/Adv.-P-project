@@ -123,6 +123,60 @@ Cpp_java_game_engin/fast:
 	$(MAKE) -f CMakeFiles/Cpp_java_game_engin.dir/build.make CMakeFiles/Cpp_java_game_engin.dir/build
 .PHONY : Cpp_java_game_engin/fast
 
+Dice.o: Dice.cpp.o
+
+.PHONY : Dice.o
+
+# target to build an object file
+Dice.cpp.o:
+	$(MAKE) -f CMakeFiles/Cpp_java_game_engin.dir/build.make CMakeFiles/Cpp_java_game_engin.dir/Dice.cpp.o
+.PHONY : Dice.cpp.o
+
+Dice.i: Dice.cpp.i
+
+.PHONY : Dice.i
+
+# target to preprocess a source file
+Dice.cpp.i:
+	$(MAKE) -f CMakeFiles/Cpp_java_game_engin.dir/build.make CMakeFiles/Cpp_java_game_engin.dir/Dice.cpp.i
+.PHONY : Dice.cpp.i
+
+Dice.s: Dice.cpp.s
+
+.PHONY : Dice.s
+
+# target to generate assembly for a file
+Dice.cpp.s:
+	$(MAKE) -f CMakeFiles/Cpp_java_game_engin.dir/build.make CMakeFiles/Cpp_java_game_engin.dir/Dice.cpp.s
+.PHONY : Dice.cpp.s
+
+Game.o: Game.cpp.o
+
+.PHONY : Game.o
+
+# target to build an object file
+Game.cpp.o:
+	$(MAKE) -f CMakeFiles/Cpp_java_game_engin.dir/build.make CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.o
+.PHONY : Game.cpp.o
+
+Game.i: Game.cpp.i
+
+.PHONY : Game.i
+
+# target to preprocess a source file
+Game.cpp.i:
+	$(MAKE) -f CMakeFiles/Cpp_java_game_engin.dir/build.make CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.i
+.PHONY : Game.cpp.i
+
+Game.s: Game.cpp.s
+
+.PHONY : Game.s
+
+# target to generate assembly for a file
+Game.cpp.s:
+	$(MAKE) -f CMakeFiles/Cpp_java_game_engin.dir/build.make CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.s
+.PHONY : Game.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +213,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Cpp_java_game_engin"
+	@echo "... Dice.o"
+	@echo "... Dice.i"
+	@echo "... Dice.s"
+	@echo "... Game.o"
+	@echo "... Game.i"
+	@echo "... Game.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
