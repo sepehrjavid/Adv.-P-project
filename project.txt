@@ -1,0 +1,24 @@
+class player:
+	win
+	games played
+class board:
+	int arr[n][m]
+	vector<mohre> elements
+	move_is_valid()
+template<int m>
+class dice:
+	int arr[m]
+	roll
+class mohre:
+	x
+	y
+	move(board a, int n)
+class game:                          //this is the manager of the game calling and putting together all of the classes
+	vector<player> players
+	has_dice = True, False
+	dice game_dice
+	board game_board
+	get_turn(){}
+	run(){}
+	
+	
