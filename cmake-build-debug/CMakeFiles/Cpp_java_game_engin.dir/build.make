@@ -57,22 +57,9 @@ include CMakeFiles/Cpp_java_game_engin.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Cpp_java_game_engin.dir/flags.make
 
-CMakeFiles/Cpp_java_game_engin.dir/main.cpp.o: CMakeFiles/Cpp_java_game_engin.dir/flags.make
-CMakeFiles/Cpp_java_game_engin.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Cpp_java_game_engin.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Cpp_java_game_engin.dir/main.cpp.o -c /home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/main.cpp
-
-CMakeFiles/Cpp_java_game_engin.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Cpp_java_game_engin.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/main.cpp > CMakeFiles/Cpp_java_game_engin.dir/main.cpp.i
-
-CMakeFiles/Cpp_java_game_engin.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Cpp_java_game_engin.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/main.cpp -o CMakeFiles/Cpp_java_game_engin.dir/main.cpp.s
-
 CMakeFiles/Cpp_java_game_engin.dir/Dice.cpp.o: CMakeFiles/Cpp_java_game_engin.dir/flags.make
 CMakeFiles/Cpp_java_game_engin.dir/Dice.cpp.o: ../Dice.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Cpp_java_game_engin.dir/Dice.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Cpp_java_game_engin.dir/Dice.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Cpp_java_game_engin.dir/Dice.cpp.o -c /home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Dice.cpp
 
 CMakeFiles/Cpp_java_game_engin.dir/Dice.cpp.i: cmake_force
@@ -85,7 +72,7 @@ CMakeFiles/Cpp_java_game_engin.dir/Dice.cpp.s: cmake_force
 
 CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.o: CMakeFiles/Cpp_java_game_engin.dir/flags.make
 CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.o: ../Game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.o -c /home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Game.cpp
 
 CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.i: cmake_force
@@ -96,18 +83,31 @@ CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Game.cpp -o CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.s
 
+CMakeFiles/Cpp_java_game_engin.dir/main.cpp.o: CMakeFiles/Cpp_java_game_engin.dir/flags.make
+CMakeFiles/Cpp_java_game_engin.dir/main.cpp.o: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Cpp_java_game_engin.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Cpp_java_game_engin.dir/main.cpp.o -c /home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/main.cpp
+
+CMakeFiles/Cpp_java_game_engin.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Cpp_java_game_engin.dir/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/main.cpp > CMakeFiles/Cpp_java_game_engin.dir/main.cpp.i
+
+CMakeFiles/Cpp_java_game_engin.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Cpp_java_game_engin.dir/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/main.cpp -o CMakeFiles/Cpp_java_game_engin.dir/main.cpp.s
+
 # Object files for target Cpp_java_game_engin
 Cpp_java_game_engin_OBJECTS = \
-"CMakeFiles/Cpp_java_game_engin.dir/main.cpp.o" \
 "CMakeFiles/Cpp_java_game_engin.dir/Dice.cpp.o" \
-"CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.o"
+"CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.o" \
+"CMakeFiles/Cpp_java_game_engin.dir/main.cpp.o"
 
 # External object files for target Cpp_java_game_engin
 Cpp_java_game_engin_EXTERNAL_OBJECTS =
 
-Cpp_java_game_engin: CMakeFiles/Cpp_java_game_engin.dir/main.cpp.o
 Cpp_java_game_engin: CMakeFiles/Cpp_java_game_engin.dir/Dice.cpp.o
 Cpp_java_game_engin: CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.o
+Cpp_java_game_engin: CMakeFiles/Cpp_java_game_engin.dir/main.cpp.o
 Cpp_java_game_engin: CMakeFiles/Cpp_java_game_engin.dir/build.make
 Cpp_java_game_engin: CMakeFiles/Cpp_java_game_engin.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Cpp_java_game_engin"

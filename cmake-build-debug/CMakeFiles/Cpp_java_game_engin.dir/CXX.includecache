@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Dice.cpp
+classes.h
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/classes.h
+ctime
+-
+
 /home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Game.cpp
 classes.h
 /home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/classes.h
@@ -15,4 +21,10 @@ iostream
 -
 vector
 -
+
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/main.cpp
+iostream
+-
+classes.h
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/classes.h
 

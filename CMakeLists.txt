@@ -3,4 +3,16 @@ project(Cpp_java_game_engin)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Cpp_java_game_engin main.cpp Dice.cpp Game.cpp)
+include_directories(.)
+include_directories(cmake-build-debug)
+
+add_executable(Cpp_java_game_engin
+        cmake-build-debug/cmake_install.cmake
+        cmake-build-debug/CMakeCache.txt
+        cmake-build-debug/Cpp_java_game_engin.cbp
+        cmake-build-debug/Makefile
+        classes.h
+        Dice.cpp
+        Game.cpp
+        main.cpp
+        project.txt)

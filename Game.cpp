@@ -5,10 +5,19 @@
 #include "classes.h"
 
 
-Game::Game(int blen, int bwid, bool has_dice, int dice_number):has_dice(has_dice) {
+Game::Game(int blen, int bwid, bool has_dice, int dice_number):has_dice(has_dice), board(Board(blen, bwid)) {
     if (has_dice){
-        dice = *(new Dice(dice_number));
+        dice = Dice(dice_number);
     }
-    board = *(new Board(blen, bwid));
 
+}
+
+
+void Game::start() {
+    std::string name;
+    //scanf("%[0-9 a-z A-Z]", name);
+    getline(std::cin, name);
+    while (true){
+
+    }
 }

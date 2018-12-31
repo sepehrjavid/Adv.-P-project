@@ -44,6 +44,8 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/."/>
+					<Add directory="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug"/>
 					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8"/>
 					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/x86_64-redhat-linux"/>
 					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/backward"/>
@@ -65,6 +67,8 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/."/>
+					<Add directory="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug"/>
 					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8"/>
 					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/x86_64-redhat-linux"/>
 					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/8/../../../../include/c++/8/backward"/>
@@ -86,7 +90,25 @@
 		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Game.cpp">
 			<Option target="Cpp_java_game_engin"/>
 		</Unit>
+		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/classes.h">
+			<Option target="Cpp_java_game_engin"/>
+		</Unit>
+		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug/CMakeCache.txt">
+			<Option target="Cpp_java_game_engin"/>
+		</Unit>
+		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug/Cpp_java_game_engin.cbp">
+			<Option target="Cpp_java_game_engin"/>
+		</Unit>
+		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug/Makefile">
+			<Option target="Cpp_java_game_engin"/>
+		</Unit>
+		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug/cmake_install.cmake">
+			<Option target="Cpp_java_game_engin"/>
+		</Unit>
 		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/main.cpp">
+			<Option target="Cpp_java_game_engin"/>
+		</Unit>
+		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/project.txt">
 			<Option target="Cpp_java_game_engin"/>
 		</Unit>
 		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/CMakeLists.txt">

@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/. -I/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug 
 

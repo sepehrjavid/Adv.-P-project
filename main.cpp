@@ -4,7 +4,7 @@
 
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    Dice d(3);
+    Game g = Game(12, 12, false);
+    g.start();
     return 0;
 }

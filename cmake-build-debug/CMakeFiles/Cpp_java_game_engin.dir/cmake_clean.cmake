@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Cpp_java_game_engin.dir/main.cpp.o"
   "CMakeFiles/Cpp_java_game_engin.dir/Dice.cpp.o"
   "CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.o"
+  "CMakeFiles/Cpp_java_game_engin.dir/main.cpp.o"
   "Cpp_java_game_engin.pdb"
   "Cpp_java_game_engin"
 )
