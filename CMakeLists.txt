@@ -15,4 +15,5 @@ add_executable(Cpp_java_game_engin
         Dice.cpp
         Game.cpp
         main.cpp
+        Player.cpp
         project.txt)

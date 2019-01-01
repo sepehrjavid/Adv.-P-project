@@ -5,19 +5,19 @@
 #include "classes.h"
 
 
-Game::Game(int blen, int bwid, bool has_dice, int dice_number):has_dice(has_dice), board(Board(blen, bwid)) {
-    if (has_dice){
-        dice = Dice(dice_number);
+void Game::add_player(std::string name, std::string ident, COLOR cl) {
+    if (cl == NONE){
+        players.push_back(new Player(ident, name));
     }
-
+    if (ident == ""){
+        players.push_back(new Player(cl, name));
+    }
+    else {
+        players.push_back(new Player(name, ident, cl));
+    }
 }
 
 
 void Game::start() {
-    std::string name;
-    //scanf("%[0-9 a-z A-Z]", name);
-    getline(std::cin, name);
-    while (true){
 
-    }
 }

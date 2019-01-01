@@ -20,7 +20,8 @@ enum COLOR{
     WHITE,
     YELLOW,
     PINK,
-    SILVER
+    SILVER,
+    NONE
 };
 
 class Player;
@@ -41,50 +42,56 @@ public:
 
 
 class Board{
-    int length, width;
-    std::vector<Mohre> elemenets;
+    const int length, width;
+    std::vector<char> board_game;
+    std::vector<Mohre*> elemenets;
 public:
-    Board(int len, int wid){};
+    Board(const int len,const  int wid):length(len), width(wid) {};
 };
 
 
 
 
 class Game{
-    std::vector<Player> players;
+    std::vector<Player*> players;
     bool has_dice;
     Dice dice;
     Board board;
 public:
-    Game(int blen, int bwid, bool has_dice, int dice_number = 0) = 0;
-    Player& get_turn();
-    void add_player();
+    void add_player(std::string name, std::string ident = "", COLOR cl = NONE);
     void start();
-    int check_winner() = 0;        //returns the index of of the winner player in the players vector
+    virtual int check_winner(){
+        throw std::exception();
+    };                                      //returns the index of of the winner player in the players vector
 };
 
 
-class Player{
+class Player final{                        //the player class cannot be inherited
     COLOR color;
     std::string identifier;             //the type of the bead the player might be using
-    std::vector<Mohre> mohre;
     std::string name;
     int score;
+public:
+    std::vector<Mohre*> mohre;
     Player(COLOR cl, std::string name);
     Player(std::string ident, std::string name);
+    Player(std::string name, std::string ident, COLOR cl);
 };
 
 
 class Mohre{
     std::string shape;
     COLOR color;
-    Mohre(COLOR cl);
-    Mohre(std::string shape);
-    Mohre(COLOR cl, std::string shape);
-    void move(Board &board) = 0;
+    char x, y;
+public:
+    virtual void move(Board &board, char destination){
+        throw std::exception();
+    };
 };
+
 
 
 class Time{
 
 };
+

@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Dice.cpp" "/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug/CMakeFiles/Cpp_java_game_engin.dir/Dice.cpp.o"
   "/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Game.cpp" "/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug/CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.o"
+  "/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Player.cpp" "/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug/CMakeFiles/Cpp_java_game_engin.dir/Player.cpp.o"
   "/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/main.cpp" "/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug/CMakeFiles/Cpp_java_game_engin.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

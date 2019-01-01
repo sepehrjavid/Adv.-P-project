@@ -7,6 +7,9 @@ CMakeFiles/Cpp_java_game_engin.dir/Dice.cpp.o: ../classes.h
 CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.o: ../Game.cpp
 CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.o: ../classes.h
 
+CMakeFiles/Cpp_java_game_engin.dir/Player.cpp.o: ../Player.cpp
+CMakeFiles/Cpp_java_game_engin.dir/Player.cpp.o: ../classes.h
+
 CMakeFiles/Cpp_java_game_engin.dir/main.cpp.o: ../classes.h
 CMakeFiles/Cpp_java_game_engin.dir/main.cpp.o: ../main.cpp
 

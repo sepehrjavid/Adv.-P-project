@@ -4,7 +4,7 @@
 
 
 int main() {
-    Game g = Game(12, 12, false);
-    g.start();
+//    Game g = Game(12, 12, false);
+//    g.start();
     return 0;
 }
