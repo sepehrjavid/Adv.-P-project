@@ -3,13 +3,57 @@
 //
 
 #include "classes.h"
+#include "helperfunctions.h"
+
 
 Player::Player(COLOR cl, std::string name):color(cl), name(name), score(0), identifier("") {}
 
 
 
-Player::Player(std::string ident, std::string name):color(NONE), name(name), score(0), identifier(ident) {}
+Player::Player(std::string ident, std::string name):color(NONe), name(name), score(0), identifier(ident) {}
 
 
 
 Player::Player(std::string name, std::string ident, COLOR cl):color(cl), name(name), score(0), identifier(ident) {}
+
+
+void Player::ask_for_move_and_move(Mohre &target) {
+    char message[128] = "beadmov 12 14";
+    //TODO socket ask for the selected place to move the bead to
+    //string format to get ("beadmov x y")
+    std::string stmessage(message);
+    std::string coordinate = stmessage.substr(7, stmessage.length());
+}
+
+
+int Player::choose_mohre() {
+    char message[128] = "beadselect 12 14";
+    //TODO socket ask for the selected bead
+    //string format to get ("beadselect x y")
+    int y, x, flag = -1;
+    std::string stmessage(message);
+    std::string coordinate = stmessage.substr(11, stmessage.length());
+    for(int i=0;i<coordinate.length();i++){
+        if (coordinate[i] == ' '){
+            x = str_to_int(coordinate.substr(0, i));
+            y = str_to_int(coordinate.substr(i + 1, coordinate.length() - 1));
+            break;
+        }
+    }
+    for (int i = 0;i < mohre.size();i++){
+        if (mohre[i]->get_y() == y and mohre[i]->get_x() == x){
+            flag = i;
+        }
+    }
+    if (flag == -1){
+        //TODO exception throw
+    }
+    else{
+        return flag;
+    }
+}
+
+
+std::vector<Mohre*>& Player::get_beads() {
+    return this->mohre;
+}

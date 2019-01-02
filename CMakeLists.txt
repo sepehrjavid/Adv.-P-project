@@ -16,4 +16,8 @@ add_executable(Cpp_java_game_engin
         Game.cpp
         main.cpp
         Player.cpp
+        Exceptions.h
+        Exceptions.cpp
+        helperfunctions.h
+        Mohre.cpp
         project.txt)

@@ -87,7 +87,16 @@
 		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Dice.cpp">
 			<Option target="Cpp_java_game_engin"/>
 		</Unit>
+		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Exceptions.cpp">
+			<Option target="Cpp_java_game_engin"/>
+		</Unit>
+		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Exceptions.h">
+			<Option target="Cpp_java_game_engin"/>
+		</Unit>
 		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Game.cpp">
+			<Option target="Cpp_java_game_engin"/>
+		</Unit>
+		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Mohre.cpp">
 			<Option target="Cpp_java_game_engin"/>
 		</Unit>
 		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Player.cpp">
@@ -106,6 +115,9 @@
 			<Option target="Cpp_java_game_engin"/>
 		</Unit>
 		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug/cmake_install.cmake">
+			<Option target="Cpp_java_game_engin"/>
+		</Unit>
+		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/helperfunctions.h">
 			<Option target="Cpp_java_game_engin"/>
 		</Unit>
 		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/main.cpp">

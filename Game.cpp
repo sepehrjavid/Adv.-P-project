@@ -6,7 +6,7 @@
 
 
 void Game::add_player(std::string name, std::string ident, COLOR cl) {
-    if (cl == NONE){
+    if (cl == NONe){
         players.push_back(new Player(ident, name));
     }
     if (ident == ""){
@@ -18,6 +18,26 @@ void Game::add_player(std::string name, std::string ident, COLOR cl) {
 }
 
 
-void Game::start() {
+void Game::start() {               //assuming that the board has been initialized and the players are added
+    Player* current_player = players[0];
+    Mohre* selected_bead;
+    int ind;
+//    while (true){
+//        try{
+//            ind = current_player->choose_mohre();
+//            selected_bead = current_player->get_beads()[ind];
+//        }
+//        catch (NoBeadInThisAreaException e) {
+//            //TODO inform the UI that there are no beads here
+//        }
+//        try {
+//            current_player->ask_for_move_and_move(selected_bead);
+//        }
+//        catch (InvalidMoveException e){
+//            //TODO send the UI that the move was invalid
+//        }
 
+//    }
 }
+
+

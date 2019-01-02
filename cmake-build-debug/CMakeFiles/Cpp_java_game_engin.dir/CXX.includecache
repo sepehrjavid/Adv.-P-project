@@ -6,13 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Game.cpp
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Player.cpp
 classes.h
 /home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/classes.h
+helperfunctions.h
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/helperfunctions.h
 
 /home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/classes.h
 iostream
 -
 vector
+-
+
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/helperfunctions.h
+sstream
+-
+iostream
+-
+string
 -
 

@@ -5,7 +5,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Dice.cpp" "/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug/CMakeFiles/Cpp_java_game_engin.dir/Dice.cpp.o"
+  "/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Exceptions.cpp" "/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug/CMakeFiles/Cpp_java_game_engin.dir/Exceptions.cpp.o"
   "/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Game.cpp" "/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug/CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.o"
+  "/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Mohre.cpp" "/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug/CMakeFiles/Cpp_java_game_engin.dir/Mohre.cpp.o"
   "/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Player.cpp" "/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug/CMakeFiles/Cpp_java_game_engin.dir/Player.cpp.o"
   "/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/main.cpp" "/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/cmake-build-debug/CMakeFiles/Cpp_java_game_engin.dir/main.cpp.o"
   )
