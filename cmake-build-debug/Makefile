@@ -150,33 +150,6 @@ Dice.cpp.s:
 	$(MAKE) -f CMakeFiles/Cpp_java_game_engin.dir/build.make CMakeFiles/Cpp_java_game_engin.dir/Dice.cpp.s
 .PHONY : Dice.cpp.s
 
-Exceptions.o: Exceptions.cpp.o
-
-.PHONY : Exceptions.o
-
-# target to build an object file
-Exceptions.cpp.o:
-	$(MAKE) -f CMakeFiles/Cpp_java_game_engin.dir/build.make CMakeFiles/Cpp_java_game_engin.dir/Exceptions.cpp.o
-.PHONY : Exceptions.cpp.o
-
-Exceptions.i: Exceptions.cpp.i
-
-.PHONY : Exceptions.i
-
-# target to preprocess a source file
-Exceptions.cpp.i:
-	$(MAKE) -f CMakeFiles/Cpp_java_game_engin.dir/build.make CMakeFiles/Cpp_java_game_engin.dir/Exceptions.cpp.i
-.PHONY : Exceptions.cpp.i
-
-Exceptions.s: Exceptions.cpp.s
-
-.PHONY : Exceptions.s
-
-# target to generate assembly for a file
-Exceptions.cpp.s:
-	$(MAKE) -f CMakeFiles/Cpp_java_game_engin.dir/build.make CMakeFiles/Cpp_java_game_engin.dir/Exceptions.cpp.s
-.PHONY : Exceptions.cpp.s
-
 Game.o: Game.cpp.o
 
 .PHONY : Game.o
@@ -297,9 +270,6 @@ help:
 	@echo "... Dice.o"
 	@echo "... Dice.i"
 	@echo "... Dice.s"
-	@echo "... Exceptions.o"
-	@echo "... Exceptions.i"
-	@echo "... Exceptions.s"
 	@echo "... Game.o"
 	@echo "... Game.i"
 	@echo "... Game.s"

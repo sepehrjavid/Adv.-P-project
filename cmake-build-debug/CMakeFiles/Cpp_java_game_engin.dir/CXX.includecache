@@ -6,23 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Player.cpp
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Exceptions.h
+exception
+-
+iostream
+-
+
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Game.cpp
 classes.h
 /home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/classes.h
-helperfunctions.h
-/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/helperfunctions.h
 
 /home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/classes.h
 iostream
 -
 vector
 -
-
-/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/helperfunctions.h
-sstream
--
-iostream
--
-string
--
+Exceptions.h
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Exceptions.h
 

@@ -87,9 +87,6 @@
 		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Dice.cpp">
 			<Option target="Cpp_java_game_engin"/>
 		</Unit>
-		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Exceptions.cpp">
-			<Option target="Cpp_java_game_engin"/>
-		</Unit>
 		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Exceptions.h">
 			<Option target="Cpp_java_game_engin"/>
 		</Unit>
@@ -100,6 +97,9 @@
 			<Option target="Cpp_java_game_engin"/>
 		</Unit>
 		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Player.cpp">
+			<Option target="Cpp_java_game_engin"/>
+		</Unit>
+		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Socket.h">
 			<Option target="Cpp_java_game_engin"/>
 		</Unit>
 		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/classes.h">

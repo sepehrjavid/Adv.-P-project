@@ -6,6 +6,7 @@
 #include "helperfunctions.h"
 
 
+
 Player::Player(COLOR cl, std::string name):color(cl), name(name), score(0), identifier("") {}
 
 
@@ -21,8 +22,23 @@ void Player::ask_for_move_and_move(Mohre &target) {
     char message[128] = "beadmov 12 14";
     //TODO socket ask for the selected place to move the bead to
     //string format to get ("beadmov x y")
+    int x, y, flag;
     std::string stmessage(message);
-    std::string coordinate = stmessage.substr(7, stmessage.length());
+    std::string coordinate = stmessage.substr(8, stmessage.length());
+    for(int i=0;i<coordinate.size();i++){
+        if (coordinate[i] == ' '){
+            x = str_to_int(coordinate.substr(0, i));
+            y = str_to_int(coordinate.substr(i + 1, coordinate.length() - 1));
+            break;
+        }
+    }
+    try {
+        target.move(x, y);
+    }
+    catch (InvalidMoveException e){
+        throw e;
+        //TODO throw exception (InvalidMoveException)
+    }
 }
 
 
@@ -48,9 +64,7 @@ int Player::choose_mohre() {
     if (flag == -1){
         //TODO exception throw
     }
-    else{
-        return flag;
-    }
+    return flag;
 }
 
 

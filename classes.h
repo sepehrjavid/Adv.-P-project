@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <vector>
+#include "Exceptions.h"
 
 enum COLOR{
     RED,
@@ -87,7 +88,7 @@ class Mohre{
     COLOR color;
     int x, y;
 public:
-    virtual void move(Board &board, char destination){
+    virtual void move(int xdest, int ydest){
         throw std::exception();
     };
     int get_x();
