@@ -61,3 +61,4 @@ void Game::start() {               //assuming that the board has been initialize
 }
 
 
+//TODO there's a slight problem, what if the game we are writing doesn't involve choosing the bead?
