@@ -5,12 +5,11 @@ CMakeFiles/Cpp_java_game_engin.dir/Dice.cpp.o: ../Dice.cpp
 CMakeFiles/Cpp_java_game_engin.dir/Dice.cpp.o: ../Exceptions.h
 CMakeFiles/Cpp_java_game_engin.dir/Dice.cpp.o: ../classes.h
 
-CMakeFiles/Cpp_java_game_engin.dir/Exceptions.cpp.o: ../Exceptions.cpp
-CMakeFiles/Cpp_java_game_engin.dir/Exceptions.cpp.o: ../Exceptions.h
-
 CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.o: ../Exceptions.h
 CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.o: ../Game.cpp
+CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.o: ../Socket.h
 CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.o: ../classes.h
+CMakeFiles/Cpp_java_game_engin.dir/Game.cpp.o: ../helperfunctions.h
 
 CMakeFiles/Cpp_java_game_engin.dir/Mohre.cpp.o: ../Exceptions.h
 CMakeFiles/Cpp_java_game_engin.dir/Mohre.cpp.o: ../Mohre.cpp

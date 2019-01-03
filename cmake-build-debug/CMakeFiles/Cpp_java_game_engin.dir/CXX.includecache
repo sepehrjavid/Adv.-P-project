@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Dice.cpp
+classes.h
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/classes.h
+ctime
+-
+
 /home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Exceptions.h
 exception
 -
@@ -13,8 +19,38 @@ iostream
 -
 
 /home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Game.cpp
+helperfunctions.h
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/helperfunctions.h
 classes.h
 /home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/classes.h
+Socket.h
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Socket.h
+
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Mohre.cpp
+classes.h
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/classes.h
+
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Player.cpp
+helperfunctions.h
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/helperfunctions.h
+classes.h
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/classes.h
+
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Socket.h
+iostream
+-
+sys/socket.h
+-
+sys/types.h
+-
+unistd.h
+-
+arpa/inet.h
+-
+stdlib.h
+-
+string.h
+-
 
 /home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/classes.h
 iostream
@@ -23,4 +59,18 @@ vector
 -
 Exceptions.h
 /home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Exceptions.h
+
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/helperfunctions.h
+sstream
+-
+iostream
+-
+string
+-
+
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/main.cpp
+iostream
+-
+classes.h
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/classes.h
 

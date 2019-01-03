@@ -6,6 +6,7 @@
 #ifndef CPP_JAVA_GAME_ENGIN_CLASSES_H
 #define CPP_JAVA_GAME_ENGIN_CLASSES_H
 
+//#include "helperfunctions.h"
 #include <iostream>
 #include <vector>
 #include "Exceptions.h"
@@ -60,9 +61,11 @@ class Game{
 public:
     void add_player(std::string name, std::string ident = "", COLOR cl = NONe);
     void start();
+    Player* get_turn(Player* current_turn);
     virtual int check_winner(){
         throw std::exception();
     };                                      //returns the index of of the winner player in the players vector
+                                            //if there are no winners yet, it returns -1
 };
 
 
@@ -80,6 +83,7 @@ public:
     int choose_mohre();
     void ask_for_move_and_move(Mohre& target);
     std::vector<Mohre*>& get_beads();
+    std::string get_name();
 };
 
 
@@ -88,8 +92,9 @@ class Mohre{
     COLOR color;
     int x, y;
 public:
-    virtual void move(int xdest, int ydest){
-        throw std::exception();
+    virtual void move(int xdest, int ydest) {//throw(InvalidMoveException) {
+        InvalidMoveException badmove();
+        throw badmove;
     };
     int get_x();
     int get_y();

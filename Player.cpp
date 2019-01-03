@@ -2,8 +2,8 @@
 // Created by sepehr on 1/1/19.
 //
 
-#include "classes.h"
 #include "helperfunctions.h"
+#include "classes.h"
 
 
 
@@ -37,7 +37,6 @@ void Player::ask_for_move_and_move(Mohre &target) {
     }
     catch (InvalidMoveException e){
         throw e;
-        //TODO throw exception (InvalidMoveException)
     }
 }
 
@@ -70,4 +69,10 @@ int Player::choose_mohre() {
 
 std::vector<Mohre*>& Player::get_beads() {
     return this->mohre;
+}
+
+
+
+std::string Player::get_name() {
+    return this->name;
 }

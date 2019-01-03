@@ -2,7 +2,10 @@
 // Created by sepehr on 12/15/18.
 //
 
+#include "helperfunctions.h"
 #include "classes.h"
+#include "Socket.h"
+
 
 
 void Game::add_player(std::string name, std::string ident, COLOR cl) {
@@ -19,6 +22,10 @@ void Game::add_player(std::string name, std::string ident, COLOR cl) {
 
 
 void Game::start() {               //assuming that the board has been initialized and the players are added
+    int UI_socket = init_socket();
+    int winner_index;
+    char char_message[128];
+    std::string message;
     Player* current_player = players[0];
     Mohre* selected_bead;
     int ind;
@@ -28,15 +35,28 @@ void Game::start() {               //assuming that the board has been initialize
             selected_bead = current_player->get_beads()[ind];
         }
         catch (NoBeadInThisAreaException e) {
-            //TODO inform the UI that there are no beads here
+            message = std::string(e.what());
+            fill_char(char_message, message);
+            send(UI_socket, char_message, sizeof(char_message), 0);
+            continue;
         }
         try {
             current_player->ask_for_move_and_move(*selected_bead);
         }
         catch (InvalidMoveException e){
-            //TODO send the UI that the move was invalid
+            message = std::string(e.what());
+            fill_char(char_message, message);
+            send(UI_socket, char_message, sizeof(char_message), 0);
+            continue;
         }
-
+        winner_index = check_winner();
+        if (winner_index != -1){
+            message = "winner" + players[winner_index]->get_name();
+            fill_char(char_message, message);
+            send(UI_socket, char_message, sizeof(char_message), 0);
+            break;
+        }
+        current_player = get_turn(current_player);
     }
 }
 
