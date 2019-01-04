@@ -30,31 +30,43 @@ void Game::start() {               //assuming that the board has been initialize
     Mohre* selected_bead;
     int ind;
     while (true){
-        try{
-            ind = current_player->choose_mohre();
-            selected_bead = current_player->get_beads()[ind];
+        if (current_player->get_brain() == HUMAN) {
+            try {
+                ind = current_player->choose_mohre();
+                selected_bead = current_player->get_beads()[ind];
+            }
+            catch (NoBeadInThisAreaException e) {
+                message = std::string(e.what());
+                fill_char(char_message, message);
+                send(UI_socket, char_message, sizeof(char_message), 0);
+                continue;
+            }
+            try {
+                current_player->ask_for_move_and_move(*selected_bead);
+            }
+            catch (InvalidMoveException e) {
+                message = std::string(e.what());
+                fill_char(char_message, message);
+                send(UI_socket, char_message, sizeof(char_message), 0);
+                continue;
+            }
         }
-        catch (NoBeadInThisAreaException e) {
-            message = std::string(e.what());
-            fill_char(char_message, message);
-            send(UI_socket, char_message, sizeof(char_message), 0);
-            continue;
-        }
-        try {
-            current_player->ask_for_move_and_move(*selected_bead);
-        }
-        catch (InvalidMoveException e){
-            message = std::string(e.what());
-            fill_char(char_message, message);
-            send(UI_socket, char_message, sizeof(char_message), 0);
-            continue;
+        else if(current_player->get_brain() == CPU){
+            current_player->think_and_move();
         }
         winner_index = check_winner();
-        if (winner_index != -1){
-            message = "winner" + players[winner_index]->get_name();
+        if (winner_index != -1) {
+            message = "winner " + players[winner_index]->get_name();
             fill_char(char_message, message);
             send(UI_socket, char_message, sizeof(char_message), 0);
             break;
+        }
+        if (check_draw()){
+            message = "draw";
+            fill_char(char_message, message);
+            send(UI_socket, char_message, sizeof(char_message), 0);
+            break;
+            //TODO what if the game is score depandant
         }
         current_player = get_turn(current_player);
     }

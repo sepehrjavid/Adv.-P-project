@@ -76,3 +76,16 @@ std::vector<Mohre*>& Player::get_beads() {
 std::string Player::get_name() {
     return this->name;
 }
+
+void Player::make_human() {
+    brain = HUMAN;
+}
+
+void Player::make_cpu() {
+    brain = CPU;
+}
+
+
+BRAIN_TYPE Player::get_brain() {
+    return brain;
+}

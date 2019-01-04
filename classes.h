@@ -24,6 +24,11 @@ enum COLOR{
 };
 
 
+enum BRAIN_TYPE{
+    HUMAN, CPU
+};
+
+
 class Player;
 
 class Mohre;
@@ -58,24 +63,34 @@ class Game{
     bool has_dice;
     Dice dice;
     Board board;
+    bool score_dependant;
 public:
     void add_player(std::string name, std::string ident = "", COLOR cl = NONe);
     void start();
-    Player* get_turn(Player* current_turn);
+    virtual Player* get_turn(Player* current_turn){
+        MethodHasToBeDefinedException b;
+        throw b;
+    };
     virtual int check_winner(){
-        throw std::exception();
+        MethodHasToBeDefinedException b;
+        throw b;
     };                                      //returns the index of of the winner player in the players vector
                                             //if there are no winners yet, it returns -1
+    virtual bool check_draw(){
+        MethodHasToBeDefinedException b;
+        throw b;
+    }
 };
 
 
 
-class Player final{                        //the player class cannot be inherited
+class Player{                        //the player class cannot be inherited
     COLOR color;
     std::string identifier;             //the type of the bead the player might be using
     std::string name;
     int score;
     std::vector<Mohre*> mohre;
+    BRAIN_TYPE brain;
 public:
     Player(COLOR cl, std::string name);
     Player(std::string ident, std::string name);
@@ -84,6 +99,13 @@ public:
     void ask_for_move_and_move(Mohre& target);
     std::vector<Mohre*>& get_beads();
     std::string get_name();
+    void make_human();
+    void make_cpu();
+    BRAIN_TYPE get_brain();
+    virtual void think_and_move(){
+        MethodHasToBeDefinedException b;
+        throw b;
+    };
 };
 
 
@@ -93,8 +115,8 @@ class Mohre{
     int x, y;
 public:
     virtual void move(int xdest, int ydest) {//throw(InvalidMoveException) {
-        InvalidMoveException badmove();
-        throw badmove;
+        MethodHasToBeDefinedException b;
+        throw b;
     };
     int get_x();
     int get_y();
