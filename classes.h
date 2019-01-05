@@ -31,6 +31,11 @@ enum BRAIN_TYPE{
 
 class Player;
 
+class Time{
+
+};
+
+
 class Mohre;
 class Dice{
     int* arr;
@@ -63,7 +68,8 @@ class Game{
     bool has_dice;
     Dice dice;
     Board board;
-    bool score_dependant;
+    bool time_dependant;
+    Time time;
 public:
     void add_player(std::string name, std::string ident = "", COLOR cl = NONe);
     void start();
@@ -76,7 +82,7 @@ public:
         throw b;
     };                                      //returns the index of of the winner player in the players vector
                                             //if there are no winners yet, it returns -1
-    virtual bool check_draw(){
+    virtual bool check_done(){
         MethodHasToBeDefinedException b;
         throw b;
     }
@@ -84,7 +90,7 @@ public:
 
 
 
-class Player{                        //the player class cannot be inherited
+class Player{
     COLOR color;
     std::string identifier;             //the type of the bead the player might be using
     std::string name;
@@ -123,9 +129,7 @@ public:
 };
 
 
-class Time{
 
-};
 
 
 

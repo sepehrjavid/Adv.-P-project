@@ -61,16 +61,14 @@ void Game::start() {               //assuming that the board has been initialize
             send(UI_socket, char_message, sizeof(char_message), 0);
             break;
         }
-        if (check_draw()){
+        if (check_done()){
             message = "draw";
             fill_char(char_message, message);
             send(UI_socket, char_message, sizeof(char_message), 0);
             break;
-            //TODO what if the game is score depandant
         }
         current_player = get_turn(current_player);
     }
 }
 
 
-//TODO there's a slight problem, what if the game we are writing doesn't involve choosing the bead?
