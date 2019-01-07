@@ -40,6 +40,7 @@ public:
     void time_start();
     void time_stop();
     bool check_time();        //return true if the difference is more than interval and returns false if less than or equal
+    void reset();
 };
 
 
@@ -58,6 +59,7 @@ public:
 
 
 class Board {
+protected:
     const int length, width;
     char **game_board;
     std::vector<Mohre *> elemenets;
@@ -66,14 +68,11 @@ public:
 //        game_board = new char *[len][wid];
             game_board = new char*[wid];
     };
-    virtual void Board_initialize(){
-        MethodHasToBeDefinedException b;
-        throw b;
-    };
 };
 
 
 class Game{
+protected:
     std::vector<Player*> players;
     bool has_dice;
     Dice dice;
@@ -87,7 +86,7 @@ public:
         MethodHasToBeDefinedException b;
         throw b;
     };
-    virtual int check_winner(){
+    virtual int check_winner(Player* current_player){
         MethodHasToBeDefinedException b;
         throw b;
     };                                      //returns the index of of the winner player in the players vector
@@ -100,11 +99,16 @@ public:
     void Remove_time_features();
     void Add_dice_feature(int number_of_dices);
     void Remove_dice_feature();
+    virtual void Board_initialize(){
+        MethodHasToBeDefinedException b;
+        throw b;
+    };
 };
 
 
 
 class Player{
+protected:
     COLOR color;
     std::string identifier;             //the type of the bead the player might be using
     std::string name;
@@ -115,13 +119,14 @@ public:
     Player(COLOR cl, std::string name);
     Player(std::string ident, std::string name);
     Player(std::string name, std::string ident, COLOR cl);
-    int choose_mohre();
-    void ask_for_move_and_move(Mohre& target, Board& board);
+    int choose_mohre(int UISock);
+    void ask_for_move_and_move(int UISock, Mohre& target, Board& board, Dice& dice);
     std::vector<Mohre*>& get_beads();
     std::string get_name();
     void make_human();
     void make_cpu();
     BRAIN_TYPE get_brain();
+    void Add_Bead(Mohre* bead);
     virtual void think_and_move(){
         MethodHasToBeDefinedException b;
         throw b;
@@ -130,20 +135,18 @@ public:
 
 
 class Mohre{
+protected:
     std::string shape;
     COLOR color;
     int x, y;
 public:
-    virtual void move(int xdest, int ydest, Board& board, Mohre& target) {//throw(InvalidMoveException) {
+    virtual void move(int xdest, int ydest, Board& board, Mohre& target, Dice& dice) throw(){
         MethodHasToBeDefinedException b;
         throw b;
     };
     int get_x();
     int get_y();
 };
-
-
-
 
 
 

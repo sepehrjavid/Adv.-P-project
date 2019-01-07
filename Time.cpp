@@ -25,3 +25,8 @@ void Time::time_stop() {
     stop = time(0);
 }
 
+
+void Time::reset() {
+    start = time(0);
+    stop  = time(0);
+}

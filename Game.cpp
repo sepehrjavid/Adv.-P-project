@@ -53,9 +53,16 @@ void Game::start() {               //assuming that the board has been initialize
     Mohre* selected_bead;
     int ind;
     while (true){
+        if (has_dice == true){
+            dice.roll();
+        }
+        if (time_dependant){
+            time.reset();
+            time.time_start();
+        }
         if (current_player->get_brain() == HUMAN) {
             try {
-                ind = current_player->choose_mohre();
+                ind = current_player->choose_mohre(UI_socket);
                 selected_bead = current_player->get_beads()[ind];
             }
             catch (NoBeadInThisAreaException e) {
@@ -65,7 +72,7 @@ void Game::start() {               //assuming that the board has been initialize
                 continue;
             }
             try {
-                current_player->ask_for_move_and_move(*selected_bead, board);
+                current_player->ask_for_move_and_move(UI_socket, *selected_bead, board, dice);
             }
             catch (InvalidMoveException e) {
                 message = std::string(e.what());
@@ -77,7 +84,10 @@ void Game::start() {               //assuming that the board has been initialize
         else if(current_player->get_brain() == CPU){
             current_player->think_and_move();
         }
-        winner_index = check_winner();
+        if (time_dependant){
+            time.time_stop();
+        }
+        winner_index = check_winner(current_player);
         if (winner_index != -1) {
             message = "winner " + players[winner_index]->get_name();
             fill_char(char_message, message);
@@ -94,6 +104,3 @@ void Game::start() {               //assuming that the board has been initialize
     }
 }
 
-
-//TODO dice is not in yet
-//TODO time is not in yet

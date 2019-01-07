@@ -2,8 +2,15 @@
 // Created by sepehr on 1/1/19.
 //
 
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <arpa/inet.h>
+#include <stdlib.h>
+#include <string.h>
 #include "helperfunctions.h"
 #include "classes.h"
+
 
 
 
@@ -18,10 +25,9 @@ Player::Player(std::string ident, std::string name):color(NONe), name(name), sco
 Player::Player(std::string name, std::string ident, COLOR cl):color(cl), name(name), score(0), identifier(ident) {}
 
 
-void Player::ask_for_move_and_move(Mohre &target, Board& board) {
+void Player::ask_for_move_and_move(int UISock, Mohre &target, Board& board, Dice& dice) {
     char message[128];
-    //TODO socket ask for the selected place to move the bead to
-    //string format to get ("beadmov x y")
+    recv(UISock, message, 128, 0);               //string format to get ("beadmov x y")
     int x, y, flag;
     std::string stmessage(message);
     std::string coordinate = stmessage.substr(8, stmessage.length());
@@ -33,7 +39,7 @@ void Player::ask_for_move_and_move(Mohre &target, Board& board) {
         }
     }
     try {
-        target.move(x, y, board, target);
+        target.move(x, y, board, target, dice);
     }
     catch (InvalidMoveException e){
         throw e;
@@ -41,10 +47,9 @@ void Player::ask_for_move_and_move(Mohre &target, Board& board) {
 }
 
 
-int Player::choose_mohre() {
-    char message[128] = "beadselect 12 14";
-    //TODO socket ask for the selected bead
-    //string format to get ("beadselect x y")
+int Player::choose_mohre(int UISock) {
+    char message[128];
+    recv(UISock, message, 128, 0);        //string format to get ("beadselect x y")
     int y, x, flag = -1;
     std::string stmessage(message);
     std::string coordinate = stmessage.substr(11, stmessage.length());
@@ -89,4 +94,9 @@ void Player::make_cpu() {
 
 BRAIN_TYPE Player::get_brain() {
     return brain;
+}
+
+
+void Player::Add_Bead(Mohre *bead) {
+    mohre.push_back(bead);
 }
