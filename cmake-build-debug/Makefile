@@ -231,6 +231,33 @@ Player.cpp.s:
 	$(MAKE) -f CMakeFiles/Cpp_java_game_engin.dir/build.make CMakeFiles/Cpp_java_game_engin.dir/Player.cpp.s
 .PHONY : Player.cpp.s
 
+Time.o: Time.cpp.o
+
+.PHONY : Time.o
+
+# target to build an object file
+Time.cpp.o:
+	$(MAKE) -f CMakeFiles/Cpp_java_game_engin.dir/build.make CMakeFiles/Cpp_java_game_engin.dir/Time.cpp.o
+.PHONY : Time.cpp.o
+
+Time.i: Time.cpp.i
+
+.PHONY : Time.i
+
+# target to preprocess a source file
+Time.cpp.i:
+	$(MAKE) -f CMakeFiles/Cpp_java_game_engin.dir/build.make CMakeFiles/Cpp_java_game_engin.dir/Time.cpp.i
+.PHONY : Time.cpp.i
+
+Time.s: Time.cpp.s
+
+.PHONY : Time.s
+
+# target to generate assembly for a file
+Time.cpp.s:
+	$(MAKE) -f CMakeFiles/Cpp_java_game_engin.dir/build.make CMakeFiles/Cpp_java_game_engin.dir/Time.cpp.s
+.PHONY : Time.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -279,6 +306,9 @@ help:
 	@echo "... Player.o"
 	@echo "... Player.i"
 	@echo "... Player.s"
+	@echo "... Time.o"
+	@echo "... Time.i"
+	@echo "... Time.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

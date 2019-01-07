@@ -18,8 +18,8 @@ Player::Player(std::string ident, std::string name):color(NONe), name(name), sco
 Player::Player(std::string name, std::string ident, COLOR cl):color(cl), name(name), score(0), identifier(ident) {}
 
 
-void Player::ask_for_move_and_move(Mohre &target) {
-    char message[128] = "beadmov 12 14";
+void Player::ask_for_move_and_move(Mohre &target, Board& board) {
+    char message[128];
     //TODO socket ask for the selected place to move the bead to
     //string format to get ("beadmov x y")
     int x, y, flag;
@@ -33,7 +33,7 @@ void Player::ask_for_move_and_move(Mohre &target) {
         }
     }
     try {
-        target.move(x, y);
+        target.move(x, y, board, target);
     }
     catch (InvalidMoveException e){
         throw e;
@@ -61,7 +61,8 @@ int Player::choose_mohre() {
         }
     }
     if (flag == -1){
-        //TODO exception throw
+        NoBeadInThisAreaException e;
+        throw e;
     }
     return flag;
 }

@@ -20,6 +20,10 @@ CMakeFiles/Cpp_java_game_engin.dir/Player.cpp.o: ../Player.cpp
 CMakeFiles/Cpp_java_game_engin.dir/Player.cpp.o: ../classes.h
 CMakeFiles/Cpp_java_game_engin.dir/Player.cpp.o: ../helperfunctions.h
 
+CMakeFiles/Cpp_java_game_engin.dir/Time.cpp.o: ../Exceptions.h
+CMakeFiles/Cpp_java_game_engin.dir/Time.cpp.o: ../Time.cpp
+CMakeFiles/Cpp_java_game_engin.dir/Time.cpp.o: ../classes.h
+
 CMakeFiles/Cpp_java_game_engin.dir/main.cpp.o: ../Exceptions.h
 CMakeFiles/Cpp_java_game_engin.dir/main.cpp.o: ../classes.h
 CMakeFiles/Cpp_java_game_engin.dir/main.cpp.o: ../main.cpp

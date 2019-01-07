@@ -21,6 +21,29 @@ void Game::add_player(std::string name, std::string ident, COLOR cl) {
 }
 
 
+
+void Game::Add_time_features(int interval) {
+    time = Time(interval);
+    time_dependant = true;
+}
+
+
+
+void Game::Remove_time_features() {
+    time_dependant = false;
+}
+
+void Game::Add_dice_feature(int number_of_dices) {
+    has_dice = true;
+    dice = Dice(number_of_dices);
+}
+
+void Game::Remove_dice_feature() {
+    has_dice = false;
+}
+
+
+
 void Game::start() {               //assuming that the board has been initialized and the players are added
     int UI_socket = init_socket();
     int winner_index;
@@ -42,7 +65,7 @@ void Game::start() {               //assuming that the board has been initialize
                 continue;
             }
             try {
-                current_player->ask_for_move_and_move(*selected_bead);
+                current_player->ask_for_move_and_move(*selected_bead, board);
             }
             catch (InvalidMoveException e) {
                 message = std::string(e.what());
@@ -72,3 +95,5 @@ void Game::start() {               //assuming that the board has been initialize
 }
 
 
+//TODO dice is not in yet
+//TODO time is not in yet

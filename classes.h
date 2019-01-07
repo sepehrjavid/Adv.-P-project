@@ -6,9 +6,9 @@
 #ifndef CPP_JAVA_GAME_ENGIN_CLASSES_H
 #define CPP_JAVA_GAME_ENGIN_CLASSES_H
 
-//#include "helperfunctions.h"
 #include <iostream>
 #include <vector>
+#include <ctime>
 #include "Exceptions.h"
 
 enum COLOR{
@@ -32,7 +32,14 @@ enum BRAIN_TYPE{
 class Player;
 
 class Time{
-
+    int interval;    //the interval should be in seconds
+    time_t start, stop;
+public:
+    Time(){};
+    Time(int interval);
+    void time_start();
+    void time_stop();
+    bool check_time();        //return true if the difference is more than interval and returns false if less than or equal
 };
 
 
@@ -59,7 +66,10 @@ public:
 //        game_board = new char *[len][wid];
             game_board = new char*[wid];
     };
-    //void initialize_the_beads();
+    virtual void Board_initialize(){
+        MethodHasToBeDefinedException b;
+        throw b;
+    };
 };
 
 
@@ -86,6 +96,10 @@ public:
         MethodHasToBeDefinedException b;
         throw b;
     }
+    void Add_time_features(int interval);
+    void Remove_time_features();
+    void Add_dice_feature(int number_of_dices);
+    void Remove_dice_feature();
 };
 
 
@@ -102,7 +116,7 @@ public:
     Player(std::string ident, std::string name);
     Player(std::string name, std::string ident, COLOR cl);
     int choose_mohre();
-    void ask_for_move_and_move(Mohre& target);
+    void ask_for_move_and_move(Mohre& target, Board& board);
     std::vector<Mohre*>& get_beads();
     std::string get_name();
     void make_human();
@@ -120,7 +134,7 @@ class Mohre{
     COLOR color;
     int x, y;
 public:
-    virtual void move(int xdest, int ydest) {//throw(InvalidMoveException) {
+    virtual void move(int xdest, int ydest, Board& board, Mohre& target) {//throw(InvalidMoveException) {
         MethodHasToBeDefinedException b;
         throw b;
     };
