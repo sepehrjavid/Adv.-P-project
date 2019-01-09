@@ -99,6 +99,9 @@
 		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Player.cpp">
 			<Option target="Cpp_java_game_engin"/>
 		</Unit>
+		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/PreviousMove.cpp">
+			<Option target="Cpp_java_game_engin"/>
+		</Unit>
 		<Unit filename="/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Socket.h">
 			<Option target="Cpp_java_game_engin"/>
 		</Unit>

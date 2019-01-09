@@ -51,6 +51,7 @@ void Game::start() {               //assuming that the board has been initialize
     std::string message;
     Player* current_player = players[0];
     Mohre* selected_bead;
+    PreviousMove last_move;
     int ind;
     while (true){
         if (has_dice == true){
@@ -72,7 +73,7 @@ void Game::start() {               //assuming that the board has been initialize
                 continue;
             }
             try {
-                current_player->ask_for_move_and_move(UI_socket, *selected_bead, board, dice);
+                last_move = current_player->ask_for_move_and_move(UI_socket, *selected_bead, board, dice, last_move);
             }
             catch (InvalidMoveException e) {
                 message = std::string(e.what());

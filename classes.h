@@ -31,6 +31,8 @@ enum BRAIN_TYPE{
 
 class Player;
 
+
+
 class Time{
     int interval;    //the interval should be in seconds
     time_t start, stop;
@@ -106,6 +108,8 @@ public:
 };
 
 
+class PreviousMove;
+
 
 class Player{
 protected:
@@ -120,7 +124,7 @@ public:
     Player(std::string ident, std::string name);
     Player(std::string name, std::string ident, COLOR cl);
     int choose_mohre(int UISock);
-    void ask_for_move_and_move(int UISock, Mohre& target, Board& board, Dice& dice);
+    PreviousMove& ask_for_move_and_move(int UISock, Mohre& target, Board& board, Dice& dice, PreviousMove& lastmove);
     std::vector<Mohre*>& get_beads();
     std::string get_name();
     void make_human();
@@ -134,13 +138,14 @@ public:
 };
 
 
+
 class Mohre{
 protected:
     std::string shape;
     COLOR color;
     int x, y;
 public:
-    virtual void move(int xdest, int ydest, Board& board, Mohre& target, Dice& dice) throw(){
+    virtual PreviousMove& move(int xdest, int ydest, Board& board, Mohre& target, Dice& dice, PreviousMove& last) {
         MethodHasToBeDefinedException b;
         throw b;
     };
@@ -148,6 +153,15 @@ public:
     int get_y();
 };
 
+
+
+class PreviousMove{
+    Mohre* target;
+    int SourceX, SourceY, DestX, DestY;
+public:
+    PreviousMove(Mohre* target, int Sourcex, int sourcey, int dx, int dy);
+    PreviousMove();
+};
 
 
 #endif //CPP_JAVA_GAME_ENGIN_CLASSES_H

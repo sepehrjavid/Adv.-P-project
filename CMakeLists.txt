@@ -20,4 +20,4 @@ add_executable(Cpp_java_game_engin
         helperfunctions.h
         Mohre.cpp
         Socket.h
-        project.txt Time.cpp)
+        project.txt Time.cpp PreviousMove.cpp)

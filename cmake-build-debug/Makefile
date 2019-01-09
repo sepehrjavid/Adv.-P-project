@@ -231,6 +231,33 @@ Player.cpp.s:
 	$(MAKE) -f CMakeFiles/Cpp_java_game_engin.dir/build.make CMakeFiles/Cpp_java_game_engin.dir/Player.cpp.s
 .PHONY : Player.cpp.s
 
+PreviousMove.o: PreviousMove.cpp.o
+
+.PHONY : PreviousMove.o
+
+# target to build an object file
+PreviousMove.cpp.o:
+	$(MAKE) -f CMakeFiles/Cpp_java_game_engin.dir/build.make CMakeFiles/Cpp_java_game_engin.dir/PreviousMove.cpp.o
+.PHONY : PreviousMove.cpp.o
+
+PreviousMove.i: PreviousMove.cpp.i
+
+.PHONY : PreviousMove.i
+
+# target to preprocess a source file
+PreviousMove.cpp.i:
+	$(MAKE) -f CMakeFiles/Cpp_java_game_engin.dir/build.make CMakeFiles/Cpp_java_game_engin.dir/PreviousMove.cpp.i
+.PHONY : PreviousMove.cpp.i
+
+PreviousMove.s: PreviousMove.cpp.s
+
+.PHONY : PreviousMove.s
+
+# target to generate assembly for a file
+PreviousMove.cpp.s:
+	$(MAKE) -f CMakeFiles/Cpp_java_game_engin.dir/build.make CMakeFiles/Cpp_java_game_engin.dir/PreviousMove.cpp.s
+.PHONY : PreviousMove.cpp.s
+
 Time.o: Time.cpp.o
 
 .PHONY : Time.o
@@ -306,6 +333,9 @@ help:
 	@echo "... Player.o"
 	@echo "... Player.i"
 	@echo "... Player.s"
+	@echo "... PreviousMove.o"
+	@echo "... PreviousMove.i"
+	@echo "... PreviousMove.s"
 	@echo "... Time.o"
 	@echo "... Time.i"
 	@echo "... Time.s"
