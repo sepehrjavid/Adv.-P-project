@@ -13,7 +13,6 @@ void Game::add_player(std::string name, std::string ident, COLOR cl, BRAIN_TYPE 
         players.push_back(new Player(ident, name));
     }
     else if (ident == ""){
-        std::cout<<"hey"<<std::endl;
         players.push_back(new Player(cl, name));
     }
     else {
@@ -66,6 +65,12 @@ void Game::start() {               //assuming that the board has been initialize
             time.time_start();
         }
         if (current_player->get_brain() == HUMAN) {
+            if (has_dice == true && !current_player->HasLegalMove(&board, &dice)){
+                message = "nolegalmove";
+                fill_char(char_message, message);
+                send(UI_socket, char_message, message.length(), 0);
+                continue;
+            }
             try {
                 ind = current_player->choose_mohre(UI_socket);
                 selected_bead = current_player->get_beads()[ind];
@@ -73,8 +78,7 @@ void Game::start() {               //assuming that the board has been initialize
             catch (NoBeadInThisAreaException e) {
                 message = std::string(e.what());
                 fill_char(char_message, message);
-                int a = send(UI_socket, char_message, message.length(), 0);
-                std::cout<<a<<std::endl;
+                send(UI_socket, char_message, message.length(), 0);
                 continue;
             }
             try {

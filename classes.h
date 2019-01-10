@@ -131,6 +131,10 @@ public:
     void make_cpu();
     BRAIN_TYPE get_brain();
     void Add_Bead(Mohre* bead);
+    virtual bool HasLegalMove(Board* board, Dice* dice){
+        MethodHasToBeDefinedException b;
+        throw b;
+    }
     virtual void think_and_move(){
         MethodHasToBeDefinedException b;
         throw b;
