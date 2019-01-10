@@ -14,15 +14,21 @@
 
 
 
-Player::Player(COLOR cl, std::string name):color(cl), name(name), score(0), identifier("") {}
+Player::Player(COLOR cl, std::string name):color(cl), name(name), score(0), identifier("") {
+    brain = CPU;
+}
 
 
 
-Player::Player(std::string ident, std::string name):color(NONe), name(name), score(0), identifier(ident) {}
+Player::Player(std::string ident, std::string name):color(NONe), name(name), score(0), identifier(ident) {
+    brain = CPU;
+}
 
 
 
-Player::Player(std::string name, std::string ident, COLOR cl):color(cl), name(name), score(0), identifier(ident) {}
+Player::Player(std::string name, std::string ident, COLOR cl):color(cl), name(name), score(0), identifier(ident) {
+    brain = CPU;
+}
 
 
 PreviousMove& Player::ask_for_move_and_move(int UISock, Mohre &target, Board& board, Dice& dice, PreviousMove& lastmove) {
@@ -51,6 +57,7 @@ PreviousMove& Player::ask_for_move_and_move(int UISock, Mohre &target, Board& bo
 int Player::choose_mohre(int UISock) {
     char message[128];
     recv(UISock, message, 128, 0);        //string format to get ("beadselect x y")
+    std::cout<<message<<std::endl;
     int y, x, flag = -1;
     std::string stmessage(message);
     std::string coordinate = stmessage.substr(11, stmessage.length());

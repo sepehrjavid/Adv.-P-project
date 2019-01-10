@@ -82,7 +82,7 @@ protected:
     bool time_dependant;
     Time time;
 public:
-    void add_player(std::string name, std::string ident = "", COLOR cl = NONe);
+    void add_player(std::string name, std::string ident = "", COLOR cl = NONe, BRAIN_TYPE brain = HUMAN);
     void start();
     virtual Player* get_turn(Player* current_turn){
         MethodHasToBeDefinedException b;
@@ -156,6 +156,7 @@ public:
 
 
 class PreviousMove{
+protected:
     Mohre* target;
     int SourceX, SourceY, DestX, DestY;
 public:

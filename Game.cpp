@@ -8,15 +8,19 @@
 
 
 
-void Game::add_player(std::string name, std::string ident, COLOR cl) {
+void Game::add_player(std::string name, std::string ident, COLOR cl, BRAIN_TYPE brain) {
     if (cl == NONe){
         players.push_back(new Player(ident, name));
     }
-    if (ident == ""){
+    else if (ident == ""){
+        std::cout<<"hey"<<std::endl;
         players.push_back(new Player(cl, name));
     }
     else {
         players.push_back(new Player(name, ident, cl));
+    }
+    if (brain == HUMAN) {
+        players[players.size() - 1]->make_human();
     }
 }
 
@@ -69,7 +73,8 @@ void Game::start() {               //assuming that the board has been initialize
             catch (NoBeadInThisAreaException e) {
                 message = std::string(e.what());
                 fill_char(char_message, message);
-                send(UI_socket, char_message, sizeof(char_message), 0);
+                int a = send(UI_socket, char_message, message.length(), 0);
+                std::cout<<a<<std::endl;
                 continue;
             }
             try {
@@ -78,7 +83,7 @@ void Game::start() {               //assuming that the board has been initialize
             catch (InvalidMoveException e) {
                 message = std::string(e.what());
                 fill_char(char_message, message);
-                send(UI_socket, char_message, sizeof(char_message), 0);
+                send(UI_socket, char_message, message.length(), 0);
                 continue;
             }
         }
@@ -92,13 +97,13 @@ void Game::start() {               //assuming that the board has been initialize
         if (winner_index != -1) {
             message = "winner " + players[winner_index]->get_name();
             fill_char(char_message, message);
-            send(UI_socket, char_message, sizeof(char_message), 0);
+            send(UI_socket, char_message, message.length(), 0);
             break;
         }
         if (check_done()){
             message = "draw";
             fill_char(char_message, message);
-            send(UI_socket, char_message, sizeof(char_message), 0);
+            send(UI_socket, char_message, message.length(), 0);
             break;
         }
         current_player = get_turn(current_player);

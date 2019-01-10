@@ -12,7 +12,17 @@ exception
 iostream
 -
 
-/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Player.cpp
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Game.cpp
+helperfunctions.h
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/helperfunctions.h
+classes.h
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/classes.h
+Socket.h
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Socket.h
+
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Socket.h
+iostream
+-
 sys/socket.h
 -
 sys/types.h
@@ -25,10 +35,6 @@ stdlib.h
 -
 string.h
 -
-helperfunctions.h
-/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/helperfunctions.h
-classes.h
-/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/classes.h
 
 /home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/classes.h
 iostream

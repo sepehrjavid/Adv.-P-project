@@ -17,7 +17,9 @@ static int str_to_int(std::string str){
 
 
 static void fill_char(char target[], std::string source){
-    for (int i=0;i<source.size();i++){
+    int i;
+    for (i=0;i<source.size();i++){
         target[i] = source[i];
     }
+    target[i] = '\0';
 }
