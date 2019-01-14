@@ -5,6 +5,7 @@
 #include "helperfunctions.h"
 #include "classes.h"
 #include "Socket.h"
+#include <stdio.h>
 
 
 
@@ -46,9 +47,28 @@ void Game::Remove_dice_feature() {
 }
 
 
+void Game::player_init(int socket, bool has_color, bool has_identifier) {
+    char message[2048];
+    recv(socket, message, 2048, 0);
+    char numb[2];
+    int count = 0;
+    sscanf(message, "%s", numb);
+    if (has_color && has_identifier){                   //"2 player1 color ident player2 color ident 1 cpu1 color ident"
+        //for (int )
+    }
+    else if (has_color){
 
-void Game::start() {               //assuming that the board has been initialized and the players are added
+    }
+    else if(has_identifier){
+
+    }
+}
+
+
+void Game::start(bool has_color, bool has_ident) {
     int UI_socket = init_socket();
+    player_init(UI_socket, has_color, has_ident);
+    Board_initialize();
     int winner_index;
     char char_message[128];
     std::string message;
