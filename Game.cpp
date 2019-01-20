@@ -14,12 +14,12 @@ COLOR str_to_color(std::string color_name) {
             return RED;
         case 'b':
             if (color_name == "black") {
-                return BALCK;
+                return BLACK;
             } else {
                 return BLUE;
             }
         case 'g':
-            return GREEEN;
+            return GREEN;
         case 'w':
             return WHITE;
         case 'y':
@@ -31,7 +31,36 @@ COLOR str_to_color(std::string color_name) {
         default:
             break;
     }
-    return BALCK;
+    return BLACK;
+}
+
+
+std::string color_to_str(COLOR col){
+    if (col == RED){
+        return "red";
+    }
+    if (col == BLACK){
+        return "black";
+    }
+    if (col == BLUE){
+        return "blue";
+    }
+    if (col == SILVER){
+        return "silver";
+    }
+    if (col == WHITE){
+        return "white";
+    }
+    if (col == YELLOW){
+        return "yellow";
+    }
+    if (col == GREEN){
+        return "green";
+    }
+    if (col == PINK){
+        return "pink";
+    }
+    return "";
 }
 
 
@@ -85,7 +114,7 @@ void Game::player_init(int socket) {
     BRAIN_TYPE brain = HUMAN;
     while (times < 2) {
         numb = str_message[0];
-        if (numb == '0' && times == 1){
+        if (numb == '0' && times == 1) {
             break;
         }
         player_numb = str_to_int(numb);
@@ -128,6 +157,44 @@ void Game::player_init(int socket) {
 #pragma clang diagnostic pop
 
 
+void Game::Send_Board_Update(int socket, int old_size) {
+    char message[2048];
+    std::string str_message;
+    PreviousMove* element;
+    for (int i = old_size; i<moves.size(); i++){
+        if (moves[i]->get_target() != nullptr){
+            element = moves[i];
+            if (element->get_operation() == ADD){
+                str_message += " add "
+                        + std::to_string(element->get_SourceX())
+                        + std::to_string(element->get_SourceY())
+                        + color_to_str(element->get_target()->get_color());
+            }
+            else if (element->get_operation() == REMOVE){
+                str_message += " rem "
+                        + std::to_string(element->get_SourceX())
+                        + std::to_string(element->get_SourceY());
+            }
+            else if (element->get_operation() == COLOR_CHANGE){
+                str_message += " clchng "
+                        + std::to_string(element->get_SourceX())
+                        + std::to_string(element->get_SourceY())
+                        + color_to_str(element->get_target()->get_color());
+            }
+            else if (element->get_operation() == MOVE){
+                str_message += " mov "
+                        + std::to_string(element->get_SourceX())
+                        + std::to_string(element->get_SourceY())
+                        + std::to_string(element->get_DestX())
+                        + std::to_string(element->get_DestY());
+            }
+        }
+    }
+    fill_char(message, str_message);
+    send(socket, message, str_message.length(), 0);
+}
+
+
 void Game::start(bool has_identifier) {
     int UI_socket = init_socket();
     player_init(UI_socket);
@@ -137,7 +204,7 @@ void Game::start(bool has_identifier) {
     std::string message;
     Player *current_player = players[0];
     Mohre *selected_bead;
-    PreviousMove last_move;
+    int moves_length = 0;
     int ind;
     while (true) {
         if (has_dice) {
@@ -168,8 +235,9 @@ void Game::start(bool has_identifier) {
                 continue;
             }
             try {
-                last_move = current_player->ask_for_move_and_move(UI_socket, *selected_bead, board, dice, last_move);
-                send_ok(UI_socket);
+                current_player->ask_for_move_and_move(UI_socket, *selected_bead, board, dice, moves);
+                //unsigned long int diff = moves.size() - moves_length;
+                Send_Board_Update(UI_socket, moves_length);
             }
             catch (InvalidMoveException e) {
                 message = std::string(e.what());

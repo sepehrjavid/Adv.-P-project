@@ -14,13 +14,21 @@
 enum COLOR {
     RED,
     BLUE,
-    GREEEN,
-    BALCK,
+    GREEN,
+    BLACK,
     WHITE,
     YELLOW,
     PINK,
     SILVER,
     NONe
+};
+
+
+enum OPERATION{
+    COLOR_CHANGE,
+    MOVE,
+    REMOVE,
+    ADD
 };
 
 
@@ -44,8 +52,7 @@ public:
 
     void time_stop();
 
-    bool
-    check_time();        //return true if the difference is more than interval and returns false if less than or equal
+    bool check_time();        //return true if the difference is more than interval and returns false if less than or equal
 
     void reset();
 };
@@ -80,6 +87,9 @@ public:
 };
 
 
+class PreviousMove;
+
+
 class Game {
 protected:
     std::vector<Player *> players;
@@ -88,6 +98,7 @@ protected:
     Board board;
     bool time_dependant = false;
     Time time;
+    std::vector<PreviousMove*> moves;
 public:
     void add_player(std::string name, std::string ident = "", COLOR cl = NONe, BRAIN_TYPE brain = HUMAN);
 
@@ -118,6 +129,8 @@ public:
 
     void player_init(int socket);
 
+    void Send_Board_Update(int socket, int old_size);
+
     virtual void Board_initialize() {
         MethodHasToBeDefinedException b;
         throw b;
@@ -134,8 +147,6 @@ public:
     };
 };
 
-
-class PreviousMove;
 
 
 class Player final{                           //do not inherit from Player class, it will never be used
@@ -155,7 +166,7 @@ public:
 
     int choose_mohre(int UISock);
 
-    PreviousMove &ask_for_move_and_move(int UISock, Mohre &target, Board &board, Dice &dice, PreviousMove &lastmove);
+    void ask_for_move_and_move(int UISock, Mohre &target, Board &board, Dice &dice, std::vector<PreviousMove*> &moves);
 
     std::vector<Mohre *> &get_beads();
 
@@ -178,7 +189,7 @@ protected:
     COLOR color;
     int x, y;
 public:
-    virtual PreviousMove &move(int xdest, int ydest, Board &board, Mohre &target, Dice &dice, PreviousMove &last) {
+    virtual void move(int xdest, int ydest, Board &board, Mohre &target, Dice &dice, std::vector<PreviousMove*> &moves) {
         MethodHasToBeDefinedException b;
         throw b;
     };
@@ -197,10 +208,35 @@ class PreviousMove {
 protected:
     Mohre *target;
     int SourceX, SourceY, DestX, DestY;
+    OPERATION operation;
 public:
-    PreviousMove(Mohre *target, int Sourcex, int sourcey, int dx, int dy);
+    PreviousMove(Mohre *target, int Sourcex, int sourcey, OPERATION operation1, int dx = -1, int dy = -1);
 
     PreviousMove();
+
+    Mohre* get_target(){
+        return target;
+    }
+
+    int get_SourceX(){
+        return SourceX;
+    }
+
+    int get_SourceY(){
+        return SourceY;
+    }
+
+    int get_DestX(){
+        return DestX;
+    }
+
+    int get_DestY(){
+        return DestY;
+    }
+
+    OPERATION get_operation(){
+        return operation;
+    }
 };
 
 

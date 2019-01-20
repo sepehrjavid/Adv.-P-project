@@ -27,8 +27,8 @@ Player::Player(std::string name, std::string ident, COLOR cl) : color(cl), name(
 }
 
 
-PreviousMove &
-Player::ask_for_move_and_move(int UISock, Mohre &target, Board &board, Dice &dice, PreviousMove &lastmove) {
+
+void Player::ask_for_move_and_move(int UISock, Mohre &target, Board &board, Dice &dice, std::vector<PreviousMove*> &moves) {
     char message[128];
     recv(UISock, message, 128, 0);               //string format to get ("beadmov x y")
     int x, y, flag;
@@ -42,7 +42,7 @@ Player::ask_for_move_and_move(int UISock, Mohre &target, Board &board, Dice &dic
         }
     }
     try {
-        return target.move(x, y, board, target, dice, lastmove);
+        target.move(x, y, board, target, dice, moves);
     }
     catch (InvalidMoveException e) {
         throw e;
