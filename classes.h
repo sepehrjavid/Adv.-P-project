@@ -44,7 +44,8 @@ public:
 
     void time_stop();
 
-    bool check_time();        //return true if the difference is more than interval and returns false if less than or equal
+    bool
+    check_time();        //return true if the difference is more than interval and returns false if less than or equal
 
     void reset();
 };
@@ -90,7 +91,7 @@ protected:
 public:
     void add_player(std::string name, std::string ident = "", COLOR cl = NONe, BRAIN_TYPE brain = HUMAN);
 
-    void start(bool has_color, bool has_ident);
+    void start(bool has_identifier);
 
     virtual Player *get_turn(Player *current_turn) {
         MethodHasToBeDefinedException b;
@@ -115,19 +116,29 @@ public:
 
     void Remove_dice_feature();
 
+    void player_init(int socket);
+
     virtual void Board_initialize() {
         MethodHasToBeDefinedException b;
         throw b;
     };
 
-    void player_init(int socket, bool has_color, bool has_identifier);
+    virtual bool HasLegalMove(Board *board, Dice *dice, Player *target) {
+        MethodHasToBeDefinedException b;
+        throw b;
+    }
+
+    virtual void cpu_think_and_move(Player *cpu_player) {
+        MethodHasToBeDefinedException b;
+        throw b;
+    };
 };
 
 
 class PreviousMove;
 
 
-class Player {
+class Player final{                           //do not inherit from Player class, it will never be used
 protected:
     COLOR color;
     std::string identifier;             //the type of the bead the player might be using
@@ -158,15 +169,6 @@ public:
 
     void Add_Bead(Mohre *bead);
 
-    virtual bool HasLegalMove(Board *board, Dice *dice) {
-        MethodHasToBeDefinedException b;
-        throw b;
-    }
-
-    virtual void think_and_move() {
-        MethodHasToBeDefinedException b;
-        throw b;
-    };
 };
 
 

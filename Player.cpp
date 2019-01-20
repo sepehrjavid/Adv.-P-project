@@ -12,33 +12,30 @@
 #include "classes.h"
 
 
-
-
-Player::Player(COLOR cl, std::string name):color(cl), name(name), score(0), identifier("") {
+Player::Player(COLOR cl, std::string name) : color(cl), name(name), score(0), identifier("") {
     brain = CPU;
 }
 
 
-
-Player::Player(std::string ident, std::string name):color(NONe), name(name), score(0), identifier(ident) {
+Player::Player(std::string ident, std::string name) : color(NONe), name(name), score(0), identifier(ident) {
     brain = CPU;
 }
 
 
-
-Player::Player(std::string name, std::string ident, COLOR cl):color(cl), name(name), score(0), identifier(ident) {
+Player::Player(std::string name, std::string ident, COLOR cl) : color(cl), name(name), score(0), identifier(ident) {
     brain = CPU;
 }
 
 
-PreviousMove& Player::ask_for_move_and_move(int UISock, Mohre &target, Board& board, Dice& dice, PreviousMove& lastmove) {
+PreviousMove &
+Player::ask_for_move_and_move(int UISock, Mohre &target, Board &board, Dice &dice, PreviousMove &lastmove) {
     char message[128];
     recv(UISock, message, 128, 0);               //string format to get ("beadmov x y")
     int x, y, flag;
     std::string stmessage(message);
     std::string coordinate = stmessage.substr(8, stmessage.length());
-    for(int i=0;i<coordinate.size();i++){
-        if (coordinate[i] == ' '){
+    for (int i = 0; i < coordinate.size(); i++) {
+        if (coordinate[i] == ' ') {
             x = str_to_int(coordinate.substr(0, i));
             y = str_to_int(coordinate.substr(i + 1, coordinate.length() - 1));
             break;
@@ -47,33 +44,32 @@ PreviousMove& Player::ask_for_move_and_move(int UISock, Mohre &target, Board& bo
     try {
         return target.move(x, y, board, target, dice, lastmove);
     }
-    catch (InvalidMoveException e){
+    catch (InvalidMoveException e) {
         throw e;
     }
 }
 
 
-
 int Player::choose_mohre(int UISock) {
     char message[128];
     recv(UISock, message, 128, 0);        //string format to get ("beadselect x y")
-    std::cout<<message<<std::endl;
+    std::cout << message << std::endl;
     int y, x, flag = -1;
     std::string stmessage(message);
     std::string coordinate = stmessage.substr(11, stmessage.length());
-    for(int i=0;i<coordinate.length();i++){
-        if (coordinate[i] == ' '){
+    for (int i = 0; i < coordinate.length(); i++) {
+        if (coordinate[i] == ' ') {
             x = str_to_int(coordinate.substr(0, i));
             y = str_to_int(coordinate.substr(i + 1, coordinate.length() - 1));
             break;
         }
     }
-    for (int i = 0;i < mohre.size();i++){
-        if (mohre[i]->get_y() == y and mohre[i]->get_x() == x){
+    for (int i = 0; i < mohre.size(); i++) {
+        if (mohre[i]->get_y() == y and mohre[i]->get_x() == x) {
             flag = i;
         }
     }
-    if (flag == -1){
+    if (flag == -1) {
         NoBeadInThisAreaException e;
         throw e;
     }
@@ -81,10 +77,9 @@ int Player::choose_mohre(int UISock) {
 }
 
 
-std::vector<Mohre*>& Player::get_beads() {
+std::vector<Mohre *> &Player::get_beads() {
     return this->mohre;
 }
-
 
 
 std::string Player::get_name() {

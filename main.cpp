@@ -2,18 +2,17 @@
 #include "classes.h"
 #include <unistd.h>
 
-class Game2:public Game{
+class Game2 : public Game {
 public:
-    void Board_initialize(){
-        std::cout<<"ok"<<"\n";
+    void Board_initialize() {
+        std::cout << "ok" << "\n";
     }
 };
 
 
+
 int main() {
-    Game g = Game();
-    Player pl = Player("sepe", "sep");
-    g.add_player("sep", "",BLUE);
-    g.start(true, false);
+    Game2 g = Game2();
+    g.start(true);
     return 0;
 }
