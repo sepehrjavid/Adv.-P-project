@@ -22,6 +22,24 @@ Socket.h
 stdio.h
 -
 
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Player.cpp
+sys/socket.h
+-
+sys/types.h
+-
+unistd.h
+-
+arpa/inet.h
+-
+stdlib.h
+-
+string.h
+-
+helperfunctions.h
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/helperfunctions.h
+classes.h
+/home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/classes.h
+
 /home/sepehr/Documents/programing/cpp/project/Cpp-java-game-engin/Socket.h
 iostream
 -

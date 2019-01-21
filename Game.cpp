@@ -159,7 +159,7 @@ void Game::player_init(int socket) {
 
 void Game::Send_Board_Update(int socket, int old_size) {
     char message[2048];
-    std::string str_message;
+    std::string str_message = "update " + std::to_string(moves.size() - old_size);
     PreviousMove* element;
     for (int i = old_size; i<moves.size(); i++){
         if (moves[i]->get_target() != nullptr){
@@ -204,7 +204,7 @@ void Game::start(bool has_identifier) {
     std::string message;
     Player *current_player = players[0];
     Mohre *selected_bead;
-    int moves_length = 0;
+    unsigned long int moves_length = 0;
     int ind;
     while (true) {
         if (has_dice) {
@@ -236,8 +236,8 @@ void Game::start(bool has_identifier) {
             }
             try {
                 current_player->ask_for_move_and_move(UI_socket, *selected_bead, board, dice, moves);
-                //unsigned long int diff = moves.size() - moves_length;
                 Send_Board_Update(UI_socket, moves_length);
+                moves_length = moves.size();
             }
             catch (InvalidMoveException e) {
                 message = std::string(e.what());
