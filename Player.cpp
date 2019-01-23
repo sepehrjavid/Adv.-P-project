@@ -30,14 +30,13 @@ Player::Player(std::string name, std::string ident, COLOR cl) : color(cl), name(
 
 void Player::ask_for_move_and_move(int UISock, Mohre &target, Board &board, Dice &dice, std::vector<PreviousMove*> &moves) {
     char message[128];
-    recv(UISock, message, 128, 0);               //string format to get ("beadmov x y")
+    recv(UISock, message, 128, 0);               //string format to get ("x y")
     int x, y, flag;
     std::string stmessage(message);
-    std::string coordinate = stmessage.substr(8, stmessage.length());
-    for (int i = 0; i < coordinate.size(); i++) {
-        if (coordinate[i] == ' ') {
-            x = str_to_int(coordinate.substr(0, i));
-            y = str_to_int(coordinate.substr(i + 1, coordinate.length() - 1));
+    for (int i = 0; i < stmessage.size(); i++) {
+        if (stmessage[i] == ' ') {
+            x = str_to_int(stmessage.substr(0, i));
+            y = str_to_int(stmessage.substr(i + 1, stmessage.length() - 1));
             break;
         }
     }
@@ -52,15 +51,13 @@ void Player::ask_for_move_and_move(int UISock, Mohre &target, Board &board, Dice
 
 int Player::choose_mohre(int UISock) {
     char message[128];
-    recv(UISock, message, 128, 0);        //string format to get ("beadselect x y")
-    std::cout << message << std::endl;
+    recv(UISock, message, 128, 0);        //string format to get ("x y")
     int y, x, flag = -1;
     std::string stmessage(message);
-    std::string coordinate = stmessage.substr(11, stmessage.length());
-    for (int i = 0; i < coordinate.length(); i++) {
-        if (coordinate[i] == ' ') {
-            x = str_to_int(coordinate.substr(0, i));
-            y = str_to_int(coordinate.substr(i + 1, coordinate.length() - 1));
+    for (int i = 0; i < stmessage.length(); i++) {
+        if (stmessage[i] == ' ') {
+            x = str_to_int(stmessage.substr(0, i));
+            y = str_to_int(stmessage.substr(i + 1, stmessage.length() - 1));
             break;
         }
     }

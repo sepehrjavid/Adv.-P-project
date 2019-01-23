@@ -13,6 +13,7 @@ public:
 
 int main() {
     Game2 g = Game2();
+    g.add_player("sep", "", RED, HUMAN);
     g.start(true);
     return 0;
 }

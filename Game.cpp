@@ -102,7 +102,7 @@ void Game::Remove_dice_feature() {
 #pragma clang diagnostic ignored "-Wsign-conversion"
 
 void Game::player_init(int socket) {
-    char message[2048] = "2 sep None blue neg None blue 1 cpu1 Q black";
+    char message[2048];// = "2 sep None blue neg None blue 1 cpu1 Q black";
     recv(socket, message, 2048, 0);
     //"2 player1 color ident player2 color ident 1 color ident" in UI the engin function to send this string should know which field to send None
     char numb = message[0];
@@ -161,7 +161,7 @@ void Game::Send_Board_Update(int socket, int old_size) {
     char message[2048];
     std::string str_message = "update " + std::to_string(moves.size() - old_size);
     PreviousMove* element;
-    for (int i = old_size; i<moves.size(); i++){
+    for (int i = old_size; i < moves.size(); i++){
         if (moves[i]->get_target() != nullptr){
             element = moves[i];
             if (element->get_operation() == ADD){
@@ -199,6 +199,7 @@ void Game::start(bool has_identifier) {
     int UI_socket = init_socket();
     player_init(UI_socket);
     Board_initialize();
+    re:
     int winner_index;
     char char_message[128];
     std::string message;
@@ -216,7 +217,8 @@ void Game::start(bool has_identifier) {
         }
         if (current_player->get_brain() == HUMAN) {
             if (has_dice && !HasLegalMove(&board, &dice, current_player)) {
-                message = "nolegalmove";
+                current_player = get_turn(current_player);
+                message = "nolegalmove " + current_player->get_name();
                 fill_char(char_message, message);
                 send(UI_socket, char_message, message.length(), 0);
                 continue;
@@ -247,6 +249,8 @@ void Game::start(bool has_identifier) {
             }
         } else if (current_player->get_brain() == CPU) {
             cpu_think_and_move(current_player);
+            Send_Board_Update(UI_socket, moves_length);
+            moves_length = moves.size();
         }
         if (time_dependant) {
             time.time_stop();
@@ -269,5 +273,6 @@ void Game::start(bool has_identifier) {
         fill_char(char_message, message);
         send(UI_socket, char_message, message.length(), 0);
     }
-}
+    //TODO handle player again
+}}
 
