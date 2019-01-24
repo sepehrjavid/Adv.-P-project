@@ -34,6 +34,10 @@ COLOR str_to_color(std::string color_name) {
     return BLACK;
 }
 
+void Game::make_insertion_based() {
+    is_insertion_based = true;
+}
+
 
 std::string color_to_str(COLOR col){
     if (col == RED){
@@ -225,16 +229,18 @@ void Game::start(bool has_identifier) {
             } else {
                 send_ok(UI_socket);
             }
-            try {
-                ind = current_player->choose_mohre(UI_socket);
-                selected_bead = current_player->get_beads()[ind];
-                send_ok(UI_socket);
-            }
-            catch (NoBeadInThisAreaException e) {
-                message = std::string(e.what());
-                fill_char(char_message, message);
-                send(UI_socket, char_message, message.length(), 0);
-                continue;
+            if (is_insertion_based == false){
+                try {
+                    ind = current_player->choose_mohre(UI_socket);
+                    selected_bead = current_player->get_beads()[ind];
+                    send_ok(UI_socket);
+                }
+                catch (NoBeadInThisAreaException e) {
+                    message = std::string(e.what());
+                    fill_char(char_message, message);
+                    send(UI_socket, char_message, message.length(), 0);
+                    continue;
+                }
             }
             try {
                 current_player->ask_for_move_and_move(UI_socket, *selected_bead, board, dice, moves);

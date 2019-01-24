@@ -92,6 +92,7 @@ class PreviousMove;
 
 class Game {
 protected:
+    bool is_insertion_based = false;
     std::vector<Player *> players;
     bool has_dice = false;
     Dice dice;
@@ -145,6 +146,8 @@ public:
         MethodHasToBeDefinedException b;
         throw b;
     };
+
+    void make_insertion_based();
 };
 
 
